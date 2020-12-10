@@ -27,21 +27,10 @@ function findProductOfAddends(list, sum, count) {
   }
 }
 
-function populateAnswers(day) {
-  fetch('../input/1.txt')
-    .then(res => res.text())
-    .then(text => {
-      const input = text.split('\n').map(n => parseInt(n));
-
-      const part1 = findProductOfAddends(input, 2020, 2);
-      consoleAnswers(day, 1, part1);
-      document.getElementById('answer1').innerHTML = findProductOfAddends(input, 2020, 2);
-
-      const part2 = findProductOfAddends(input, 2020, 3);
-      consoleAnswers(day, 2, part2);
-      document.getElementById('answer2').innerHTML = findProductOfAddends(input, 2020, 3);
-    }
-  );
-}
-
-populateAnswers(1);
+const DAY1 = 1;
+parseData(DAY1, (input) => {
+  const expenses = input.map(n => parseInt(n));
+  const part1 = findProductOfAddends(expenses, 2020, 2);
+  const part2 = findProductOfAddends(expenses, 2020, 3);
+  showAnswers(DAY1, part1, part2);
+});
