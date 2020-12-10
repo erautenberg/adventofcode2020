@@ -1,0 +1,16 @@
+{
+  "name": "advent2018",
+  "version": "1.0.0",
+  "description": "Emily's JavaScript solutions to Advent of Code 2018",
+  "main": "index.js",
+  "dependencies": {},
+  "scripts": {
+    "start": "node public/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emily Rautenberg",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
+}
