@@ -35,4 +35,4 @@ function makeHyperlink(title, location) {
   return list;
 }
 
-makeNavigation(1);
+makeNavigation(2);
