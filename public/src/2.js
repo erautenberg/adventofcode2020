@@ -11,8 +11,9 @@ function isPasswordValid2(p) {
 
 const DAY2 = 2;
 parseData(DAY2, (input) => {
+  const regex = /(?<min>\d+)-(?<max>\d+) (?<char>\w): (?<password>.*)/g;
   let passwords = input.map(p => {
-    const regex = /(?<min>\d+)-(?<max>\d+) (?<char>\w): (?<password>.*)/g;
+    regex.lastIndex = 0;
     let match = regex.exec(p);
     if (match) { return match.groups; }
   });
