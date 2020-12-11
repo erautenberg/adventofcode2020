@@ -15,7 +15,7 @@ function findProductOfAddends(list, sum, count) {
     let final = 0;
     // using some (instead of forEach) will stop looping as soon as it returns true
     list.some((n, index) => {
-      // rremove the expense from the list to ensure it cannot be used multiple times
+      // remove the expense from the list to ensure it cannot be used multiple times
       let shortenedList = list.slice(0, index).concat(list.slice(index+1));
       let product = findProductOfAddends(shortenedList, sum - n, count - 1);
       if (product > 0) {
