@@ -15,6 +15,10 @@ function parseData(day, callback) {
     .then(text => callback(text.split('\n')));
 }
 
+function filterDuplicates(arr) {
+  return arr.filter((a, index) => arr.indexOf(a) === index);
+}
+
 // NAVIGATION
 function makeNavigation(days) {
   let nav = document.getElementById('nav');
@@ -35,5 +39,5 @@ function makeHyperlink(title, location) {
   return list;
 }
 
-const DAYS_COMPLETED = 6;
+const DAYS_COMPLETED = 7;
 makeNavigation(DAYS_COMPLETED);

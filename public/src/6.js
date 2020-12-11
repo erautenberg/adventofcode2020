@@ -2,7 +2,7 @@ function getQuestionCount(group) {
   // simplifies the questions into one array, then one string, then into an array of characters
   const questions = group.flat().join('').split('');
   // filters out any duplicates in the questions and returns the amount
-  return questions.filter((q, index) => questions.indexOf(q) === index).length;
+  return filterDuplicates(questions).length;
 }
 
 function getUnanimousQuestionCount(group) {
