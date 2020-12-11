@@ -58,13 +58,13 @@ function getContainingBags(rules, bagColor, containingBags = []) {
   return filterDuplicates(containingBags);
 }
 
-function getContainingBagCount(rules, bagColor) {
+function getNestedBagCount(rules, bagColor) {
   let count = 1;
   if (rules[bagColor] && rules[bagColor].length) {
     rules[bagColor].forEach(childBag => {
       const childBagColor = Object.keys(childBag)[0];
       let bagCount = childBag[childBagColor];
-      count += (bagCount * getContainingBagCount(rules, childBagColor));
+      count += (bagCount * getNestedBagCount(rules, childBagColor));
     });
   }
   return count;
@@ -73,6 +73,6 @@ function getContainingBagCount(rules, bagColor) {
 const DAY7 = 7;
 parseData(DAY7, (input) => {
   const part1 = getContainingBags(sortBagsByChild(input), 'shiny gold').length;
-  const part2 = getContainingBagCount(sortBagsByParent(input), 'shiny gold') - 1;
+  const part2 = getNestedBagCount(sortBagsByParent(input), 'shiny gold') - 1;
   showAnswers(DAY7, part1, part2);
 });
