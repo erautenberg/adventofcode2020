@@ -133,6 +133,6 @@ parseData(DAY12, (input) => {
   const headingPart1 = navigate(instructions, 'E');
   const headingPart2 = navigateWaypoint(instructions, 'E');
   const part1 = getManhattanDistance(headingPart1.east, headingPart1.north);
-  const part2 = getManhattanDistance(headingPart2.east, headingPart2.north);;
+  const part2 = getManhattanDistance(headingPart2.east, headingPart2.north);
   showAnswers(DAY12, part1, part2);
 });
