@@ -19,6 +19,25 @@ function filterDuplicates(arr) {
   return arr.filter((a, index) => arr.indexOf(a) === index);
 }
 
+function getPermutations(arr) {
+  if (arr.length < 2) {
+    return arr;
+  }
+  let permutationsArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    let curr = arr[i];
+    if (arr.indexOf(curr) != i) {
+      continue;
+    }
+    let remainder = arr.slice();
+    remainder.splice(i, 1);
+    for (let permutation of getPermutations(remainder)) {
+      permutationsArray.push([ curr, permutation ].flat());
+    }
+  }
+  return permutationsArray;
+}
+
 // NAVIGATION
 function makeNavigation(days) {
   let nav = document.getElementById('nav');
@@ -39,5 +58,5 @@ function makeHyperlink(title, location) {
   return list;
 }
 
-const DAYS_COMPLETED = 15;
+const DAYS_COMPLETED = 16;
 makeNavigation(DAYS_COMPLETED);
