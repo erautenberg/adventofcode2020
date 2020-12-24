@@ -101,6 +101,6 @@ function getAllLocations(maskFloatingCombos, maskedLocation) {
 const DAY14 = 14;
 parseData(DAY14, (input) => {
   const part1 = getSum(executeProgramV1(parseInputV1(input)));
-  const part2 = getSum(executeProgramV2(parseInputV2(input)));;
+  const part2 = getSum(executeProgramV2(parseInputV2(input)));
   showAnswers(DAY14, part1, part2);
 });
